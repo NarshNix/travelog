@@ -126,8 +126,10 @@ html {
 .media-logos {
   color: rgb(255, 255, 255);
   font-size: 2.8rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .media-logos:hover {
   cursor: pointer;
+  transform: translateY(-0.6rem);
 }
