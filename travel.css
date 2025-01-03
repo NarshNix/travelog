@@ -8,13 +8,17 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  overflow: auto;
+}
+
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 
   width: 100%;
-  height: 3.2rem;
+  height: 4.2rem;
 
   background-color: rgba(50, 50, 120, 0.6);
 }
@@ -61,18 +65,37 @@ html {
   gap: 8px;
 }
 
+.search {
+  position: relative;
+  width: 60%;
+  padding: 3px;
+}
+
 .search input {
-  width: 90%;
+  width: 100%;
+  height: 3rem;
   border-radius: 20px;
   outline: none;
-  padding: 3px;
+  border: 2px solid #fff;
+}
 
-  border: none;
+.search input:focus {
+  animation: border 2s alternate-reverse none infinite ease-in-out;
+}
+
+.search input::placeholder {
+  padding: 10px;
+  margin-left: 1rem;
 }
 
 .search-logo {
-  color: #fff;
-  font-size: 1.2rem;
+  color: #000;
+  font-size: 2rem;
+  position: absolute;
+
+  top: 50%;
+  right: 0.8rem;
+  transform: translateY(-50%);
 }
 
 #submit,
@@ -83,10 +106,18 @@ html {
     rgba(238, 174, 202, 1) 0%,
     rgba(148, 187, 233, 1) 100%
   );
+  width: 8rem;
 
-  padding: 2px 4px;
+  padding: 4px 6px;
   border-radius: 20px;
   border: none;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+#submit:hover,
+#reset:hover {
+  cursor: pointer;
 }
 
 .home {
@@ -97,6 +128,64 @@ html {
   background-size: cover;
   height: 100vh;
   width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  overflow-y: scroll;
+}
+
+.home-content {
+  width: 50%;
+  max-width: 80%; /* Ensures the width does not exceed the parent */
+  height: auto; /* Automatically adjust height to fit content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(148, 187, 233, 0.8);
+  border-radius: 80px;
+  padding: 8rem 4rem; /* Adjust padding for proper spacing */
+  overflow: hidden; /* Prevents content overflow */
+  box-sizing: border-box; /* Includes padding in width/height calculations */
+}
+
+.text-content,
+.home-heading {
+  width: 70%;
+  height: 100%;
+}
+
+.home-heading h4 {
+  font-size: 3.2rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+  margin-bottom: 2.4rem;
+  text-shadow: 1px 1px 1px #fff;
+}
+
+.home-para {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal; /* Ensures text wraps within the container */
+
+  font-size: 1.6rem;
+  letter-spacing: 1.2px;
+  line-height: 1.2;
+  margin-bottom: 1.6rem;
+  color: #fff;
+}
+
+.text-content button {
+  padding: 2px 4px;
+  border-radius: 20px;
+  width: 8rem;
+  height: 3rem;
+  border: none;
+
+  color: lavenderblush;
+  background-color: #000;
+  letter-spacing: 1px;
 }
 
 .socials {
@@ -132,4 +221,61 @@ html {
 .media-logos:hover {
   cursor: pointer;
   transform: translateY(-0.6rem);
+}
+
+#data-display {
+  align-self: flex-start;
+  justify-content: center;
+  display: flex;
+  width: 50%;
+  height: 100%;
+  flex-direction: column;
+
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 80%;
+
+  /* overflow-y: scroll; */
+}
+
+.data-img {
+  margin-bottom: 1.8rem;
+}
+
+.data-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Optional: for rounded corners */
+}
+
+.data-heading h1 {
+  font-size: 2.8rem;
+  color: #fff;
+  letter-spacing: 1.5px;
+  margin-bottom: 2rem;
+}
+
+.data-text p {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+@keyframes border {
+  0%,
+  100% {
+    border-top: 2px solid blanchedalmond;
+  }
+
+  25% {
+    border-right: 2px solid grey;
+  }
+
+  50% {
+    border-bottom: 2px solid rebeccapurple;
+  }
+
+  75% {
+    border-left: 2px solid plum;
+  }
 }
