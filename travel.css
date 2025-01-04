@@ -132,7 +132,7 @@ body {
   display: flex;
   align-items: center;
 
-  overflow-y: scroll;
+  overflow: auto;
 }
 
 .home-content {
@@ -235,7 +235,7 @@ body {
   padding: 1rem;
   max-width: 80%;
 
-  /* overflow-y: scroll; */
+  overflow: hidden;
 }
 
 .data-img {
@@ -259,6 +259,63 @@ body {
   font-size: 1.6rem;
   color: #fff;
   margin-bottom: 2rem;
+}
+
+.about-content {
+  width: 50%;
+  padding: 4px 6px;
+  margin-right: 1.8rem;
+}
+
+.about-heading {
+  font-size: 3.2rem;
+  color: #fff;
+  text-transform: uppercase;
+
+  margin-bottom: 2rem;
+}
+
+.about-para {
+  font-size: 1.5rem;
+  color: #bbb;
+  letter-spacing: 1.4px;
+  line-height: 1.2;
+  text-shadow: 0px 2px 10px #bbb;
+}
+
+.about-team {
+  width: 50%;
+
+  display: flex;
+  gap: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.founder h4,
+.vp h4,
+.ceo h4 {
+  font-size: 2.6rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.founder p,
+.vp p,
+.ceo p {
+  font-size: 1.3rem;
+  color: #eee;
+  text-shadow: 0px 2px 10px #eee;
+
+  margin-bottom: 1rem;
+}
+
+span {
+  font-size: 1.2rem;
+  color: #bbb;
+  text-shadow: 0px 2px 10px #bbb;
 }
 
 @keyframes border {
