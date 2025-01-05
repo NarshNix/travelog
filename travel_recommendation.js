@@ -5,6 +5,7 @@ const subitForm = document.getElementById("submit-form");
 const message = document.getElementById("message");
 const email = document.getElementById("email");
 const user = document.getElementById("user");
+const reset = document.getElementById("reset");
 
 let arrData = [];
 let formData = [];
@@ -77,6 +78,10 @@ function displayData(data) {
   dataDisplay.innerHTML = toDisplay;
 }
 
+function resetResult() {
+  dataDisplay.innerHTML = "";
+}
+
 function getQuery(e) {
   e.preventDefault();
   let name = user.value;
@@ -99,4 +104,5 @@ function getQuery(e) {
 }
 
 submit.addEventListener("click", getData);
+reset.addEventListener("click", resetResult);
 subitForm.addEventListener("click", getQuery);
