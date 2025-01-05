@@ -1,7 +1,13 @@
 const dataDisplay = document.getElementById("data-display");
 const search = document.getElementById("search");
 const submit = document.getElementById("submit");
+const subitForm = document.getElementById("submit-form");
+const message = document.getElementById("message");
+const email = document.getElementById("email");
+const user = document.getElementById("user");
+
 let arrData = [];
+let formData = [];
 
 async function getData() {
   arrData = [];
@@ -71,4 +77,26 @@ function displayData(data) {
   dataDisplay.innerHTML = toDisplay;
 }
 
+function getQuery(e) {
+  e.preventDefault();
+  let name = user.value;
+  let useremail = email.value;
+  let usermessage = message.value;
+
+  const data = {
+    name,
+    email: useremail,
+    usermessage,
+  };
+
+  console.log(data);
+  alert(
+    `Message: ${data.usermessage} for user ${data.name} with email: ${data.email} is submitted`
+  );
+  user.value = "";
+  email.value = "";
+  message.value = "";
+}
+
 submit.addEventListener("click", getData);
+subitForm.addEventListener("click", getQuery);
